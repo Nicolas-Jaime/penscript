@@ -38,17 +38,8 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="login.php">Log in</a></li>
+                        <li class="nav-item"><a class="nav-link" href="signin.php">Sign in</a></li>
                     </ul>
                     <form class="d-flex">
                         <li class="nav-link dropdown">
@@ -90,7 +81,7 @@
                         while ($row = $result->fetch_assoc()) {
                             echo'<div class="col mb-5">
                             <div class="card h-100">
-                                <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." />
+                                <a href="articulo.php" target="_blank"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
                                 <div class="card-body p-4">
                                     <div class="text-center">
                                         <h5 class="fw-bolder">' . $row["nombre"] . '</h5>
