@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
     <h1>
-        <?php 
-        
-            $servername = "localhost";
-            $username = "root";
-            $password = '';
-            $database = "penscript";
-            $conn = new mysqli($servername, $username, $password, $database);
-            if ($conn->connect_error) {
-                die("Error de conexión: " . $conn->connect_error);
-            }
-
-        ?>
+    <?php    
+        require_once "conexion.php";
+    ?>
     </h1>
 <head>
     <meta charset="UTF-8">
@@ -55,5 +46,6 @@
                 </div>
             </div>
         </nav>
+        
 </body>
 </html>
