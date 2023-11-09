@@ -49,8 +49,9 @@
                     <!-- articulo-->
                     <?php
                         while ($row = $result->fetch_assoc()) {
-                            echo'<div class="col mb-5">
-                            <div class="card h-100">
+                            if(is_null($row["delete_at"])){
+                                echo'<div class="col mb-5">
+                                <div class="card h-100">
                                 <a href="articulo.php" target="_blank"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -60,10 +61,11 @@
                                 </div>
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
-                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" href="#">añadir al carrito loco ese</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" href="#">añadir al carrito loco ese</a></div>
                                 </div>
-                            </div>
-                        </div>';
+                                </div>
+                            </div>';
+                            }
                         }
                     ?>
                 </div>
@@ -101,24 +103,24 @@
                     <?php
                         while ($row = $result->fetch_assoc()) {
                             if(is_null($row["delete_at"])){
-                            echo '
-                            <div class="col mb-5">
-                                <div class="card h-100">
-                                    <a href="articulo.php" target="_blank"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <h5 class="fw-bolder">' . $row["nombre"] . '</h5>
-                                            $' . $row["precio"] . '
+                                echo '
+                                <div class="col mb-5">
+                                    <div class="card h-100">
+                                        <a href="articulo.php" target="_blank"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
+                                        <div class="card-body p-4">
+                                            <div class="text-center">
+                                                <h5 class="fw-bolder">' . $row["nombre"] . '</h5>
+                                                $' . $row["precio"] . '
+                                            </div>
+                                        </div>
+                                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                            <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
+                                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" href="#">añadir al carrito loco ese</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: red;" onclick="document.location.href=`delete.php?article_id=' . $row['article_id'] . '`">eliminar</a></div>
                                         </div>
                                     </div>
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" href="#">añadir al carrito loco ese</a></div>
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: red;" onclick="document.location.href=`delete.php?article_id=' . $row['article_id'] . '`">eliminar</a></div>
-                                    </div>
-                                </div>
-                            </div>';
-                        }
+                                </div>';
+                            }
                     }
                     ?>
                 </div>
@@ -157,21 +159,23 @@
                     <!-- articulo-->
                     <?php
                         while ($row = $result->fetch_assoc()) {
-                            echo'<div class="col mb-5">
-                            <div class="card h-100">
-                                <a href="articulo.php" target="_blank"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                        <h5 class="fw-bolder">' . $row["nombre"] . '</h5>
-                                        $' . $row["precio"] . '
+                            if(is_null($row["delete_at"])){
+                                echo'<div class="col mb-5">
+                                <div class="card h-100">
+                                    <a href="articulo.php" target="_blank"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">' . $row["nombre"] . '</h5>
+                                            $' . $row["precio"] . '
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" href="#">añadir al carrito loco ese</a></div>
                                     </div>
                                 </div>
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
-                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" href="#">añadir al carrito loco ese</a></div>
-                                </div>
-                            </div>
-                        </div>';
+                            </div>';
+                            }
                         }
                     ?>
                 </div>

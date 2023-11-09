@@ -7,7 +7,7 @@
                 <?php
                     include_once("conexion.php");
                     
-                        if(isset($_SESSION['cargo']) && $_SESSION['cargo'] == 1){
+                        if(isset($_SESSION['cargo']) && $_SESSION['cargo'] == 1 || isset($_SESSION['cargo']) && $_SESSION['cargo'] == 2){
                             echo '<li class="nav-item"><a class="nav-link" href="logout.php">log out</a></li>';
                         }else{
                             echo '
