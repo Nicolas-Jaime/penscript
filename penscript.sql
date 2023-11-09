@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2023 a las 01:43:31
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.0.25
+-- Tiempo de generación: 09-11-2023 a las 04:00:53
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,20 +32,21 @@ CREATE TABLE `articulos` (
   `precio` double DEFAULT NULL,
   `nombre` varchar(255) DEFAULT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
-  `imagen` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `imagen` varchar(255) DEFAULT NULL,
+  `delete_at` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `articulos`
 --
 
-INSERT INTO `articulos` (`article_id`, `precio`, `nombre`, `descripcion`, `imagen`) VALUES
-(1, 1, 'droga', 'LOLOLOLOL', 'assets/coso.jpg'),
-(2, 5435, 'farmacos', 'fkasdlfjsdañgha', 'assets/coso.jpg'),
-(3, 99, 'lapicera (droga)', 'EXTASIS EXTASIS', 'assets/coso.jpg'),
-(4, 7265, 'frgfgdsfg', 'LOLOLgrgggsgOLOL', 'assets/coso.jpg'),
-(5, 5642, 'garegsg', 'LOLOLOLrgdfhrturtysfdhOL', 'assets/coso.jpg'),
-(6, 73265, 'drsherghshtrshoga', 'uetyujdgkdtytr', 'assets/coso.jpg');
+INSERT INTO `articulos` (`article_id`, `precio`, `nombre`, `descripcion`, `imagen`, `delete_at`) VALUES
+(1, 1, 'droga', 'LOLOLOLOL', 'assets/coso.jpg', '2023-11-08'),
+(2, 5435, 'farmacos', 'fkasdlfjsdañgha', 'assets/coso.jpg', '2023-11-08'),
+(3, 99, 'lapicera (droga)', 'EXTASIS EXTASIS', 'assets/coso.jpg', NULL),
+(4, 7265, 'frgfgdsfg', 'LOLOLgrgggsgOLOL', 'assets/coso.jpg', NULL),
+(5, 5642, 'garegsg', 'LOLOLOLrgdfhrturtysfdhOL', 'assets/coso.jpg', NULL),
+(6, 73265, 'drsherghshtrshoga', 'uetyujdgkdtytr', 'assets/coso.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -58,15 +59,17 @@ CREATE TABLE `usuario` (
   `nombreUsuario` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `contraseña` varchar(50) NOT NULL,
-  `cargo` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `cargo` tinyint(4) NOT NULL,
+  `delete_at` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`user_id`, `nombreUsuario`, `email`, `contraseña`, `cargo`) VALUES
-(1, 'Roberto', 'roberterox@gmail.roberto', 'papeppeoraj', 1);
+INSERT INTO `usuario` (`user_id`, `nombreUsuario`, `email`, `contraseña`, `cargo`, `delete_at`) VALUES
+(3, '2', '2', '2', 2, NULL),
+(30, '1', '1', '1', 1, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -98,7 +101,7 @@ ALTER TABLE `articulos`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
