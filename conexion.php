@@ -23,12 +23,6 @@ function consulta($conn, $sql)
             $sql = "UPDATE articulos SET articulos.delete_at = CURRENT_DATE() WHERE articulos.article_id ='$id' ";
                                     
             $res = consulta($conn, $sql);
-                    
-                if(1 == mysqli_num_rows($res)){
-                    $_SESSION = mysqli_fetch_assoc($res);
-                    header('Location: index.php');
-                }else{
-                    ?><p class="sherr">Usuario y/o clave incorrecto</p><?php
-                } 
+            echo $sql;
         }
 ?>
