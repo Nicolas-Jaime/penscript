@@ -70,26 +70,26 @@
         <?php
             /* if($_POST['email'] == ) */
             
-            if(isset($_POST['password']) && isset($_POST['email']) && isset($_POST['username'])){
+          if(isset($_POST['password']) && isset($_POST['email']) && isset($_POST['username'])){
 
-                $sql = "SELECT * 
-                FROM usuario 
-                WHERE email='".$_POST['email']."'";
-            
-                $res = consulta($conn, $sql);
+            $sql = "SELECT * 
+            FROM usuario 
+            WHERE email='".$_POST['email']."'";
+        
+            $res = consulta($conn, $sql);
 
-                 if(mysqli_num_rows($res) == 0){
-                        $sql2 = "INSERT INTO `usuario`(`nombreUsuario`, `email`, `contraseña`, `cargo`) VALUES ('" . $_POST['username'] . "','" . $_POST['email'] . "','" . $_POST['password'] . "',1)";
-                        $sql3 = "SELECT * FROM usuario WHERE email='".$_POST['email']."'";
-                        
-                        $res2 = consulta($conn, $sql2);
-                        $res3 = consulta($conn, $sql3);
-                        $_SESSION = mysqli_fetch_assoc($res3);
-                        header('Location: index.php');
-                    }else{
-                        ?><p class="sherr">Usuario ya existe</p><?php
-                    }
-            }
+              if(mysqli_num_rows($res) == 0){
+                $sql2 = "INSERT INTO `usuario`(`nombreUsuario`, `email`, `contraseña`, `cargo`) VALUES ('" . $_POST['username'] . "','" . $_POST['email'] . "','" . $_POST['password'] . "',1)";
+                $sql3 = "SELECT * FROM usuario WHERE email='".$_POST['email']."'";
+                
+                $res2 = consulta($conn, $sql2);
+                $res3 = consulta($conn, $sql3);
+                $_SESSION = mysqli_fetch_assoc($res3);
+                header('Location: index.php');
+              }else{
+                ?><p class="sherr">Usuario ya existe</p><?php
+              }
+          }
         ?>
     </div>
 
@@ -101,5 +101,6 @@
     </div>
   </div>
 </section>
+<?php require_once "components/footer.php"; ?>
 </body>
 </html>

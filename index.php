@@ -56,10 +56,11 @@
                     <?php
                         if(!isset($_SESSION['cargo'])){
                             while ($row = $result->fetch_assoc()) {
+                                /* vista para usuario no registrado */
                                 if(is_null($row["delete_at"])){
                                     echo'<div class="col mb-5">
                                     <div class="card h-100">
-                                    <a href="articulo.php" target="_blank"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
+                                    <a class="nav-link" href="articulo.php"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
                                     <div class="card-body p-4">
                                         <div class="text-center">
                                             <h5 class="fw-bolder">' . $row["nombre"] . '</h5>
@@ -75,32 +76,34 @@
                                 };
                             };
                         }else if(isset($_SESSION['cargo'])){
+                            /* vista para usuario registrado */
                             if($_SESSION['cargo'] == 1){
                                 while ($row = $result->fetch_assoc()) {
                                     if(is_null($row["delete_at"])){
                                         echo'<div class="col mb-5">
                                         <div class="card h-100">
-                                        <a href="articulo.php" target="_blank"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
+                                        <a href="articulo.php"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
                                         <div class="card-body p-4">
                                             <div class="text-center">
-                                                <h5 class="fw-bolder">' . $row["nombre"] . '</h5>
+                                                <a class="nav-link" href="articulo.php"><h5 class="fw-bolder">' . $row["nombre"] . '</h5></a>
                                                 $' . $row["precio"] . '
                                             </div>
                                         </div>
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" href="#">añadir al carrito loco ese</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`carrito.php?article_id=' . $row['article_id'] . '&user_id=' . $_SESSION["user_id"] . '&pag`">añadir al carrito loco ese</a></div>
                                         </div>
                                         </div>
                                     </div>';
                                     };
                                 };
+                            /* vista para admin */
                             }else if($_SESSION['cargo'] == 2){
                                 while ($row = $result->fetch_assoc()) {
                                     if(is_null($row["delete_at"])){
                                         echo'<div class="col mb-5">
                                         <div class="card h-100">
-                                        <a href="articulo.php" target="_blank"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
+                                        <a class="nav-link" href="articulo.php"> <img class="card-img-top" src="' . $row["imagen"] . '" alt="..." /></a>
                                         <div class="card-body p-4">
                                             <div class="text-center">
                                                 <h5 class="fw-bolder">' . $row["nombre"] . '</h5>
@@ -109,7 +112,7 @@
                                         </div>
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" href="#">añadir al carrito loco ese</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;">modificar</a></div>
                                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: red;" onclick="document.location.href=`delete.php?article_id=' . $row['article_id'] . '`">eliminar</a></div>
                                         </div>
                                         </div>
@@ -122,13 +125,6 @@
                 </div>
             </div>
         </section>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; My Website 2023</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <?php require_once "components/footer.php"; ?>
     </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2023 a las 04:00:53
+-- Tiempo de generación: 10-11-2023 a las 22:26:06
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.12
 
@@ -41,12 +41,31 @@ CREATE TABLE `articulos` (
 --
 
 INSERT INTO `articulos` (`article_id`, `precio`, `nombre`, `descripcion`, `imagen`, `delete_at`) VALUES
-(1, 1, 'droga', 'LOLOLOLOL', 'assets/coso.jpg', '2023-11-08'),
-(2, 5435, 'farmacos', 'fkasdlfjsdañgha', 'assets/coso.jpg', '2023-11-08'),
+(1, 1, 'droga', 'LOLOLOLOL', 'assets/coso.jpg', NULL),
+(2, 5435, 'farmacos', 'fkasdlfjsdañgha', 'assets/coso.jpg', NULL),
 (3, 99, 'lapicera (droga)', 'EXTASIS EXTASIS', 'assets/coso.jpg', NULL),
 (4, 7265, 'frgfgdsfg', 'LOLOLgrgggsgOLOL', 'assets/coso.jpg', NULL),
 (5, 5642, 'garegsg', 'LOLOLOLrgdfhrturtysfdhOL', 'assets/coso.jpg', NULL),
-(6, 73265, 'drsherghshtrshoga', 'uetyujdgkdtytr', 'assets/coso.jpg', NULL);
+(6, 73265, 'drsherghshtrshoga', 'uetyujdgkdtytr', 'assets/pez.jpeg', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrito`
+--
+
+CREATE TABLE `carrito` (
+  `article_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `carrito`
+--
+
+INSERT INTO `carrito` (`article_id`, `user_id`, `id`) VALUES
+(6, 30, 27);
 
 -- --------------------------------------------------------
 
@@ -69,7 +88,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`user_id`, `nombreUsuario`, `email`, `contraseña`, `cargo`, `delete_at`) VALUES
 (3, '2', '2', '2', 2, NULL),
-(30, '1', '1', '1', 1, NULL);
+(30, '1', '1', '1', 1, NULL),
+(33, 'sabri', 'sabri', 'sabri', 1, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -80,6 +100,12 @@ INSERT INTO `usuario` (`user_id`, `nombreUsuario`, `email`, `contraseña`, `carg
 --
 ALTER TABLE `articulos`
   ADD PRIMARY KEY (`article_id`);
+
+--
+-- Indices de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuario`
@@ -98,10 +124,16 @@ ALTER TABLE `articulos`
   MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
