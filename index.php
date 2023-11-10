@@ -91,7 +91,7 @@
                                         </div>
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`carrito.php?article_id=' . $row['article_id'] . '&user_id=' . $_SESSION["user_id"] . '&pag`">añadir al carrito loco ese</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`carrito.php?article_id=' . $row['article_id'] . '&user_id=' . $_SESSION["user_id"] . '&pag=index`">añadir al carrito loco ese</a></div>
                                         </div>
                                         </div>
                                     </div>';
