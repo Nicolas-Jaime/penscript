@@ -31,7 +31,11 @@
                 <li class="nav-link dropdown">
                     <a class="btn btn-outline-dark dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi-cart-fill me-1"></i>
                     Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a>
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">
+                        <?php 
+                            echo isset($lol2) ? $lol2 : 0;
+                        ?>
+                    </span></a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         
                         <?php

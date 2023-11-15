@@ -6,7 +6,7 @@
         $res = consulta($conn, $sql);
     }
     if($_GET["pag"] == "index"){
-    header("Location: index.php");
+        header("Location: index.php");
     }else if($_GET["pag"] == "articulo"){
         header("Location: articulo.php");
     }
