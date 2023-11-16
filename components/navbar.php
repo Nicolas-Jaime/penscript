@@ -6,7 +6,8 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <?php
                     include_once("conexion.php");
-                    
+                    $getPath = $_SERVER['REQUEST_URI'];
+
                     if(isset($_SESSION["user_id"])){
                         $sql2 = "SELECT user_id, articulos.article_id, nombre, imagen, precio, id
                         FROM carrito
@@ -48,7 +49,7 @@
                                             <div class="text-center">
                                                 <h5 class="fw-bolder">' . $row["nombre"] . '</h5>
                                                 <h7>' . $row["precio"] . '</h7>
-                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`delete_carrito.php?id=' . $row['id'] . '`">eliminar</a></div>
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`delete_carrito.php?id=' . $row['id'] . '&originalURL=' . $getPath . '`">eliminar</a></div>
                                             </div>
                                         </div>
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent"></div>

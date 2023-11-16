@@ -4,5 +4,5 @@
         $sql = "DELETE FROM `carrito` WHERE id=" . $_GET['id'] . ";";
         $res = consulta($conn, $sql);
     }
-    header("Location: index.php");
+    header("Location: " . $_GET['originalURL']);
 ?>

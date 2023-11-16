@@ -3,7 +3,9 @@
     <h1>
     <?php    
         require_once "conexion.php";
-        $sql = "SELECT * FROM articulos WHERE article_id=" . $_GET['articulo_id'] . "";
+
+        $getArticleID = $_GET['articulo_id'];
+        $sql = "SELECT * FROM articulos WHERE article_id=" . $getArticleID;
         $result = $conn->query($sql);
         $article = mysqli_fetch_assoc($result);
     ?>
@@ -11,10 +13,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $article["nombre"]?></title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
@@ -31,7 +32,23 @@
                         </div>
                         <p class="lead"><?php echo $article["descripcion"] ?></p>
                         <div class="d-flex">
-                            <?php echo '<div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`carrito.php?article_id=' . $article['article_id'] . '&pag=articulo`">añadir al carrito loco ese</a></div>';?>
+                            <div class="text-center">
+                                <?php if(isset($_SESSION["user_id"])){?>
+                                    <a
+                                    class="btn btn-outline-dark mt-auto"
+                                    style="background-color: grey;" 
+                                    href="carrito.php?article_id=<?php echo $getArticleID?>&user_id=<?php $_SESSION['user_id'] ?>&pag=articulo">
+                                        añadir al carrito loco ese
+                                    </a>;
+                                <?php }else{?>
+                                    <a
+                                    class="btn btn-outline-dark mt-auto"
+                                    style="background-color: grey;" 
+                                    href="login.php">
+                                        añadir al carrito loco ese
+                                    </a>;
+                                <?php }; ?>
+                            </div>
                         </div>
                     </div>
                 </div>

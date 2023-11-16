@@ -8,6 +8,6 @@
     if($_GET["pag"] == "index"){
         header("Location: index.php");
     }else if($_GET["pag"] == "articulo"){
-        header("Location: articulo.php");
+        header("Location: articulo.php?articulo_id=" . $_GET['article_id'] . "&pag=articulo");
     }
 ?>
