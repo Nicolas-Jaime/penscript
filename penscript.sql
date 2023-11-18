@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2023 a las 02:21:05
+-- Tiempo de generación: 18-11-2023 a las 00:58:36
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -50,7 +50,9 @@ INSERT INTO `articulos` (`article_id`, `precio`, `nombre`, `descripcion`, `image
 (13, 5, 'Goma Fabercastell', 'La mejor goma Fabercastell de tu vida', 'https://www.ofi-z.com/img/articulos/goma_de_borrar_faber_7082_lapiz_tinta.jpg', NULL),
 (14, 10, 'Goma Pizzini', 'La mejor goma Pizzini de tu vida', 'https://ss-static-01.esmsv.com/id/57887/productos/obtenerimagen/?id=1276&useDensity=false&width=1280&height=720&tipoEscala=contain', NULL),
 (15, 800, 'Liquidpaper Fabercastell', 'El mejor liquidpaper Fabercastell de tu vida', 'https://www.ofi-z.com/img/articulos/lapiz_corrector_faber_castell_8_ml.gif', NULL),
-(16, 999, 'Liquidpaper Pizzini', 'El mejor liquidpaper Pizzini de tu vida', 'https://www.todoutiles.com.ar/thumb/036157_800x800.JPG', NULL);
+(16, 999, 'Liquidpaper Pizzini', 'El mejor liquidpaper Pizzini de tu vida', 'https://www.todoutiles.com.ar/thumb/036157_800x800.JPG', NULL),
+(21, 1, 'YOYO', 'YOYO', 'https://resizer.glanacion.com/resizer/v2/hay-evidencias-de-su-existencia-desde-el-siglo-v-FDSZLZRAMFHYBOT5KRS5WYHA2U.jpg?auth=1096649acbfeaf4f08f5117fe7935aa0689fb559dc91c1f7a29c63f3e068cac3&width=768&quality=70&smart=false', NULL),
+(22, 0, 'LOL', 'LOL', 'https://openseauserdata.com/files/7d5d665f92c09858439458678bc879a4.gif', NULL);
 
 -- --------------------------------------------------------
 
@@ -73,7 +75,35 @@ INSERT INTO `carrito` (`article_id`, `user_id`, `id`) VALUES
 (6, 30, 31),
 (0, 30, 32),
 (0, 30, 33),
-(4, 30, 34);
+(4, 30, 34),
+(8, 0, 38),
+(8, 0, 39),
+(8, 0, 40),
+(8, 0, 41),
+(9, 0, 43),
+(9, 0, 44),
+(9, 0, 45),
+(9, 0, 46),
+(9, 0, 47),
+(9, 0, 48),
+(9, 0, 49),
+(8, 0, 58),
+(8, 0, 59),
+(8, 0, 60),
+(8, 0, 61),
+(8, 0, 62),
+(8, 0, 63),
+(8, 0, 64),
+(8, 0, 65),
+(8, 0, 66),
+(8, 0, 67),
+(8, 0, 68),
+(8, 0, 69),
+(8, 0, 70),
+(8, 0, 71),
+(8, 0, 72),
+(8, 0, 73),
+(7, 0, 74);
 
 -- --------------------------------------------------------
 
@@ -129,13 +159,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `articulos`
 --
 ALTER TABLE `articulos`
-  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
