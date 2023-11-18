@@ -111,7 +111,7 @@
                                         </div>
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;">modificar</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`modificarArticulo.php?imagen=' . $row["imagen"] . '&nombre=' . $row["nombre"] . '&precio=' . $row["precio"] . '&descripcion=' . $row["descripcion"] . '`">modificar</a></div>
                                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: red;" onclick="document.location.href=`delete.php?article_id=' . $row['article_id'] . '`">eliminar</a></div>
                                         </div>
                                         </div>

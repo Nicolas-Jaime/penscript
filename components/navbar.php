@@ -64,7 +64,7 @@
                     <?php }else if(isset($_SESSION["cargo"]) && $_SESSION["cargo"] == 2){
 
                         echo'
-                        <a class="btn btn-outline-dark" href="agregarArticulo.php" role="button">Crear Producto</a>
+                        <a class="btn btn-outline-dark" href="agregarArticulo.php?rol=crear" role="button">Crear Producto</a>
                         ';
 
                      } ?>
