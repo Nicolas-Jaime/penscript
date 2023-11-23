@@ -4,7 +4,7 @@
     <?php    
         require_once "conexion.php";
 
-        $getArticleID = $_GET['articulo_id'];
+        $getArticleID = $_GET['articleid'];
         $sql = "SELECT * FROM articulos WHERE article_id=" . $getArticleID;
         $result = $conn->query($sql);
         $article = mysqli_fetch_assoc($result);
@@ -33,19 +33,30 @@
                         <p class="lead"><?php echo $article["descripcion"] ?></p>
                         <div class="d-flex">
                             <div class="text-center">
-                                <?php if(isset($_SESSION["user_id"])){?>
+                                <!-- usuario -->
+                                <?php if(isset($_SESSION["user_id"])){
+                                    if($_SESSION["cargo"] == 1){?>
                                     <a
                                     class="btn btn-outline-dark mt-auto"
                                     style="background-color: grey;" 
-                                    href="carrito.php?article_id=<?php echo $getArticleID?>&user_id=<?php $_SESSION['user_id'] ?>&pag=articulo">
-                                        añadir al carrito loco ese
-                                    </a>;
-                                <?php }else{?>
+                                    href="carrito.php?articleid=<?php echo $getArticleID;?>&user_id=<?php echo $_SESSION['user_id']; ?>&pag=articulo">
+                                        añadir al carrito
+                                    </a>
+                                <!-- admin -->
+                                <?php }else if ($_SESSION["cargo"] == 2){?>
+                                    <a
+                                    class="btn btn-outline-dark mt-auto"
+                                    style="background-color: grey;" 
+                                    href="modificarArticulo.php?articleid=<?php echo $getArticleID;?>&user_id=<?php echo $_SESSION['user_id']; ?>&imagen=<?php echo $article["imagen"];?>&nombre=<?php echo $article["nombre"];?>&precio=<?php echo $article["precio"];?>&descripcion=<?php echo $article["descripcion"];?>&pag=articulo">
+                                        modificar
+                                    </a>
+                                <?php }}else{?>
+                                <!-- no registrado -->
                                     <a
                                     class="btn btn-outline-dark mt-auto"
                                     style="background-color: grey;" 
                                     href="login.php">
-                                        añadir al carrito loco ese
+                                        añadir al carrito
                                     </a>;
                                 <?php }; ?>
                             </div>

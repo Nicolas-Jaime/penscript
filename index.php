@@ -59,10 +59,10 @@
                                 if(is_null($row["delete_at"])){
                                     echo'<div class="col mb-5">
                                     <div class="card h-100">
-                                    <a class="ratio ratio-1x1" href="articulo.php?articulo_id=' . $row["article_id"] . '"> <img class="card-img-top" style="object-fit:cover;" src="' . $row["imagen"] . '" alt="..." /></a>
+                                    <a class="ratio ratio-1x1" href="articulo.php?articleid=' . $row["article_id"] . '"> <img class="card-img-top" style="object-fit:cover;" src="' . $row["imagen"] . '" alt="..." /></a>
                                     <div class="card-body p-4">
                                         <div class="text-center">
-                                            <a class="nav-link" href="articulo.php?articulo_id=' . $row["article_id"] . '"><h5 class="fw-bolder">' . $row["nombre"] . '</h5></a>
+                                            <a class="nav-link" href="articulo.php?articleid=' . $row["article_id"] . '"><h5 class="fw-bolder">' . $row["nombre"] . '</h5></a>
                                             $' . $row["precio"] . '
                                         </div>
                                     </div>
@@ -81,16 +81,16 @@
                                     if(is_null($row["delete_at"])){
                                         echo'<div class="col mb-5">
                                         <div class="card h-100">
-                                        <a class="ratio ratio-1x1" href="articulo.php?articulo_id=' . $row["article_id"] . '"> <img class="card-img-top" style="object-fit:cover;" src="' . $row["imagen"] . '" alt="..." /></a>
+                                        <a class="ratio ratio-1x1" href="articulo.php?articleid=' . $row["article_id"] . '"> <img class="card-img-top" style="object-fit:cover;" src="' . $row["imagen"] . '" alt="..." /></a>
                                         <div class="card-body p-4">
                                             <div class="text-center">
-                                                <a class="nav-link" href="articulo.php?articulo_id=' . $row["article_id"] . '"><h5 class="fw-bolder">' . $row["nombre"] . '</h5></a>
+                                                <a class="nav-link" href="articulo.php?articleid=' . $row["article_id"] . '"><h5 class="fw-bolder">' . $row["nombre"] . '</h5></a>
                                                 $' . $row["precio"] . '
                                             </div>
                                         </div>
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`carrito.php?article_id=' . $row['article_id'] . '&user_id=' . $_SESSION["user_id"] . '&pag=index`">Añadir al carrito</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`carrito.php?articleid=' . $row['article_id'] . '&user_id=' . $_SESSION["user_id"] . '&pag=index`">Añadir al carrito</a></div>
                                         </div>
                                         </div>
                                     </div>';
@@ -102,16 +102,16 @@
                                     if(is_null($row["delete_at"])){
                                         echo'<div class="col mb-5">
                                         <div class="card h-100">
-                                        <a class="ratio ratio-1x1" href="articulo.php?articulo_id=' . $row["article_id"] . '"> <img class="card-img-top" style="object-fit:cover;" src="' . $row["imagen"] . '" alt="..." /></a>
+                                        <a class="ratio ratio-1x1" href="articulo.php?articleid=' . $row["article_id"] . '"> <img class="card-img-top" style="object-fit:cover;" src="' . $row["imagen"] . '" alt="..." /></a>
                                         <div class="card-body p-4">
                                             <div class="text-center">
-                                                <a class="nav-link" href="articulo.php?articulo_id=' . $row["article_id"] . '"><h5 class="fw-bolder">' . $row["nombre"] . '</h5></a>
+                                                <a class="nav-link" href="articulo.php?articleid=' . $row["article_id"] . '"><h5 class="fw-bolder">' . $row["nombre"] . '</h5></a>
                                                 $' . $row["precio"] . '
                                             </div>
                                         </div>
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div class="text-center"><p>' . $row["descripcion"] . '</p></div>
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`modificarArticulo.php?imagen=' . $row["imagen"] . '&nombre=' . $row["nombre"] . '&precio=' . $row["precio"] . '&descripcion=' . $row["descripcion"] . '`">modificar</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: grey;" onclick="document.location.href=`modificarArticulo.php?imagen=' . $row["imagen"] . '&nombre=' . $row["nombre"] . '&precio=' . $row["precio"] . '&descripcion=' . $row["descripcion"] . '&articleid=' . $row["article_id"] . '`">modificar</a></div>
                                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" style="background-color: red;" onclick="document.location.href=`delete.php?article_id=' . $row['article_id'] . '`">eliminar</a></div>
                                         </div>
                                         </div>
