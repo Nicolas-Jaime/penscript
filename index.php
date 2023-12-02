@@ -33,7 +33,7 @@
                 <div class="text-center text-white">
                     <?php
                         if(!isset($_SESSION['cargo'])){
-                            echo '<h1 class="display-4 fw-bolder">PENSCRIPT no sos nadie</h1>';
+                            echo '<h1 class="display-4 fw-bolder">PENSCRIPT</h1>';
                         }else{
                             if($_SESSION['cargo'] == 1){
                                 echo '<h1 class="display-4 fw-bolder">PENSCRIPT sos usuario</h1>';
@@ -43,7 +43,7 @@
                         }
                     ?>
                     
-                    <p class="lead fw-normal text-white-50 mb-0">tenemos una lapicera para vos (dorga)</p>
+                    <p class="lead fw-normal text-white-50 mb-0">tenemos una lapicera para vos</p>
                 </div>
             </div>
         </header>
